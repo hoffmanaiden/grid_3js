@@ -3,6 +3,8 @@ import {Canvas, useFrame} from '@react-three/fiber'
 import {OrbitControls} from '@react-three/drei'
 import Box from './components/box'
 import BottomPlane from './components/bottomPlane'
+import MeshGrid from './components/meshGrid';
+import { GridHelper } from 'three';
 
 function Dolly() {
   // This one makes the camera move in and out
@@ -17,14 +19,16 @@ function App() {
   return (
     <div className="App">
       <Canvas
-        camera={{position: [0,0,10]}}
+        // camera={{position: [0,0,10]}}
       >
         <ambientLight/>
         <pointLight position={[10,10,10]}/>
-        <Box position={[0,-4,0]}/>
+        {/* <Box position={[0,-4,0]}/>
         <BottomPlane position={[0,-5,0]}/>
-        {/* <OrbitControls/> */}
-        <Dolly />
+        <OrbitControls/>
+        <Dolly /> */}
+        <MeshGrid />
+        <OrbitControls/>
       </Canvas>
     </div>
   );
